@@ -1,0 +1,55 @@
+@import "example-init";
+
+.govuk-notification-banner {
+  padding: 20px 20px 0;
+  margin-bottom: 50px;
+  border: 5px solid govuk-colour("blue");
+  font-family: $govuk-font-family;
+
+  &:focus {
+    outline: 4px solid $govuk-focus-colour;
+  }
+}
+
+.govuk-notification-banner__title {
+  @include govuk-font($size: 24);
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.govuk-notification-banner__body {
+  @include govuk-font($size: 19);
+
+  p {
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
+
+}
+
+// Cross-component class - adjusts styling of list component
+.govuk-notification-banner__list {
+  margin-top: 0;
+}
+
+.govuk-notification-banner__list a {
+  font-weight: bold;
+
+  // Override default link styling to use error colour
+  &:link,
+  &:visited,
+  &:hover,
+  &:active {
+    color: #d4351c;
+  }
+
+}
+
+.govuk-notification-banner--success {
+  border: 5px solid govuk-colour("green");
+}
+
+.govuk-notification-banner--error {
+  border: 5px solid govuk-colour("red");
+}

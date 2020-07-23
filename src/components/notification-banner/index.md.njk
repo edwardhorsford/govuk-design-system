@@ -1,0 +1,95 @@
+---
+title: Notification banner
+description: Use a notification banner to display important and time-sensitive information
+section: Components
+aliases:
+backlog_issue_id: 2
+layout: layout-pane.njk
+---
+
+{% from "_example.njk" import example %}
+
+The notification banner is used to display important and time-sensitive information.
+
+{{ example({group: "components", item: "notification-banner", example: "default", html: true, open: true, size: "s"}) }}
+
+## When to use this component
+
+Use the notification banner to draw attention to something important that has happened or will happen, or something that the user needs to do.
+
+For example you could use a notification banner to tell people about:
+
+* a disruption to the service they are using
+* an important task that they need to perform soon
+* an important change to the document they are reading
+* whether an action they performed was successful or not
+
+[EXAMPLES]
+
+## When not to use this component
+
+Only add a notification banner to a page if its message is relevant to that page. Use them sparingly to avoid reducing their impact. 
+
+Notification banners should not be used within the body of a document. If you need to draw attention to content within a document use the Warning text or Inset text components instead.
+
+Don’t use notification banners to tell people about the overall outcome of a transaction. To confirm that a transaction has been completed, use the Confirmation page pattern.
+
+## How it works
+
+There are 2 ways to use the notification banner component. You can use HTML or, if you are using Nunjucks or the GOV.UK Prototype Kit, you can use the Nunjucks macro.
+
+{{ example({group: "components", item: "notification-banner", example: "default", html: true, open: true, size: "s"}) }}
+
+### Success notifications
+
+Use a green success notification banner to alert the user that the action they performed was successful. Success notifications are automatically focused after a page loads.
+
+{{ example({group: "components", item: "notification-banner", example: "success", html: true, open: true, size: "s"}) }}
+
+Only use a success notification when it’s not obvious from the context that the user’s action was successful.
+
+### Error notifications
+
+Use a red error notification banner to alert the user that the action they performed (such as filling out a form) was not successful. Error notifications are automatically focused after a page loads.
+
+{{ example({group: "components", item: "notification-banner", example: "error", html: true, open: true, size: "s"}) }}
+
+Find out how to use error notification banners to help users [Recover from validation errors](/patterns/validation/).
+
+### Accessibility
+
+Never rely on the colour of the notification alone to communicate information to the user - the content and context of the notification must be sufficient for this.
+
+Standard blue notifications have `role="region"`  and `aria-label="notice"` attributes added to them so that they are correctly handled by assistive technologies.
+
+Success and error notifications have `role="alert"` , `tab-index=-1`  and `data-module="initial-focus"` attributes applied. This makes sure that keyboard focus is shifted to them when they first appear, so that screen-reader users are immediately made aware of them.
+
+### Removing notification banners
+
+Notification banners should persist for as long as the information they contain is relevant.
+
+If a notification banner is no longer relevant you should remove it when the user next performs a meaningful action, such as leaving or refreshing the page.
+
+Do not remove a notification banner before the user has moved on to the next action, as they may not have had time to read it.
+
+### Positioning notification banners
+
+Position notification banners immediately before the page heading. This gives them visual prominence when the page loads, without breaking up the flow of the document. 
+
+Avoid showing multiple notification banners of the same type on the same page. Instead, combine them into a single banner, like this:
+
+{{ example({group: "components", item: "notification-banner", example: "error-multiple", html: true, open: true, size: "s"}) }}
+
+If you have a persistent status message, you could temporarily replace it with an alert and then reinstate the status message after a page refresh or by dismissing the alert.
+
+If you still need to show multiple notification banners then put an alert before a standard banner.
+
+Do not show error alerts and success alerts at the same time. Avoid partial successes and only show success when there are no errors.
+
+## Research on this component
+
+More research is needed to understand whether:
+
+* it's sometimes helpful to allow users to dismiss notifications, and the best way to let them do this
+* to use alert notifications for actions with a delayed outcome - such as the result of an overnight batch process
+* users sometimes miss important information in notification banners
