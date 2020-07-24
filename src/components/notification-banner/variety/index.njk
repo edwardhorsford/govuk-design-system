@@ -1,0 +1,37 @@
+---
+title: Variety – notification banner
+layout: layout-example.njk
+stylesheets:
+- components/notification-banner/notification-banner.css
+---
+
+<div class="govuk-notification-banner" aria-labelledby="notification-banner-title" role="region" aria-label="notice">
+  <h2 class="govuk-notification-banner__title" id="notification-banner-title">
+    There might be a delay in processing your application due to the impact of coronavirus (COVID-19)
+  </h2>
+</div>
+
+<div class="govuk-notification-banner" aria-labelledby="notification-banner-title" role="region" aria-label="notice">
+  <h2 class="govuk-notification-banner__title" id="notification-banner-title">
+    You have 9 days to send a response. <a class="govuk-link" href="#respond-to-application">Respond to application</a>.
+  </h2>
+</div>
+
+<div class="govuk-notification-banner govuk-notification-banner--success" aria-labelledby="notification-banner-title" role="alert" tabindex="-1" data-module="initial-focus">
+  <h2 class="govuk-notification-banner__title" id="notification-banner-title">
+    Invite sent to example@email.com
+  </h2>
+</div>
+
+<div class="govuk-notification-banner govuk-notification-banner--error" aria-labelledby="notification-banner-title" role="alert" tabindex="-1" data-module="initial-focus">
+  <h2 class="govuk-notification-banner__title" id="notification-banner-title">
+    There is a problem
+  </h2>
+  <div class="govuk-notification-banner__body">
+    <ul class="govuk-list govuk-notification-banner__list">
+      <li>
+        <a href="#passport-issued-error">The date your passport was issued must be in the past</a>
+      </li>
+    </ul>
+  </div>
+</div>
