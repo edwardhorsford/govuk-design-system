@@ -1,8 +1,8 @@
 @import "example-init";
 
 .govuk-notification-banner {
-  padding: 20px 20px 0;
   margin-bottom: 50px;
+  padding: 20px 20px 0;  
   border: 5px solid govuk-colour("blue");
   font-family: $govuk-font-family;
 
@@ -13,9 +13,9 @@
 
 .govuk-notification-banner__title {
   @include govuk-font($size: 24);
-  font-weight: 700;
-  margin-top: 0;
   margin-bottom: 20px;
+  margin-top: 0;
+  font-weight: 700;
 }
 
 .govuk-notification-banner__body {
@@ -41,7 +41,7 @@
   &:visited,
   &:hover,
   &:active {
-    color: #d4351c;
+    color: govuk-colour("red");
   }
 
 }
