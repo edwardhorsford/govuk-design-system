@@ -1,6 +1,8 @@
 ---
 title: Passport – Question pages
 layout: layout-example-full-page.njk
+stylesheets:
+- components/notification-banner/notification-banner.css
 ---
 
 {% extends "example-wrappers/full-page.njk" %}
@@ -19,6 +21,18 @@ layout: layout-example-full-page.njk
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-notification-banner" aria-labelledby="notification-banner-title" role="region">
+        <h2 class="govuk-notification-banner__title" id="notification-banner-title">
+          We're currently experiencing delays
+        </h2>
+        <div class="govuk-notification-banner__body">
+          <p>
+            Due to the impacts of COVID-19, applications will take longer to process than usual. Please apply at another time if you don't need a passport urgently.
+          </p>
+        </div>
+      </div>
+
       <h1 class="govuk-heading-l">Passport details</h1>
 
       <form action="/form-handler" method="post" novalidate>
