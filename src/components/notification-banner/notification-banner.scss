@@ -2,7 +2,7 @@
 
 .govuk-notification-banner {
   margin-bottom: 50px;
-  padding: 20px 20px 0;  
+  padding: 20px 20px 0;
   border: 5px solid govuk-colour("blue");
   font-family: $govuk-font-family;
 
@@ -13,8 +13,8 @@
 
 .govuk-notification-banner__title {
   @include govuk-font($size: 24);
-  margin-bottom: 20px;
   margin-top: 0;
+  margin-bottom: 20px;
   font-weight: 700;
 }
 
