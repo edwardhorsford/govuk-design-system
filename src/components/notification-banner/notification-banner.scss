@@ -52,4 +52,14 @@
 
 .govuk-notification-banner--error {
   border: 5px solid govuk-colour("red");
+
+  a {
+    &:link,
+    &:visited,
+    &:hover,
+    &:active {
+      color: govuk-colour("red");
+    }
+
+  }
 }
