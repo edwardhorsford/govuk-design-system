@@ -30,9 +30,9 @@ For example you could use a notification banner to tell people about:
 
 Only add a notification banner to a page if its message is relevant to that page. Use notifcation banners as little as possible to avoid reducing their impact. 
 
-Don't use notification banners within the body of a document. If you need to draw attention to content within a document, use the [Warning text](../warning-text/) or [Inset text](../inset-text/) components instead.
+Don't use notification banners within the body of a document. If you need to draw attention to content within a document, use the [warning text](../warning-text/) or [inset text](../inset-text/) components instead.
 
-Don’t use notification banners to tell people about the outcome of a transaction. Use the [Confirmation page](/patterns/confirmation-pages/) pattern to confirm that a user has completed a transaction.
+Don’t use notification banners to confirm that a user has completed a transaction, use the [confirmation page](/patterns/confirmation-pages/) pattern instead.
 
 ## How it works
 
@@ -52,7 +52,9 @@ Only use a success notification when it’s not obvious from the context that th
 
 Use a red error notification banner to alert the user that the action they performed (such as filling out a form) was not successful. Error notifications are automatically focused after a page loads.
 
-Tell the user how to fix the problem and link to where they can do this. To help the user recover from a validation error on the same page, use the [error summary](../error-summary/) component.
+Tell the user how to fix the problem and link to where they can do this if possible. 
+
+To help the user recover from a validation error on the same page, use the [error summary](../error-summary/) component.
 
 {{ example({group: "components", item: "notification-banner", example: "error", html: true, open: true, size: "s"}) }}
 
@@ -76,9 +78,7 @@ Do not remove a notification banner before the user has moved on to the next act
 
 Position notification banners immediately before the page heading. This gives them visual prominence when the page loads without breaking the flow of the document.
 
-Avoid showing multiple notification banners of the same type on the same page. Instead, combine them into a single banner, like this:
-
-{{ example({group: "components", item: "notification-banner", example: "error-multiple", html: true, open: true, size: "s"}) }}
+Avoid showing multiple notification banners of the same type on the same page. Instead, combine them into a single banner.
 
 If you have a persistent status message, you could temporarily replace it with an alert and then reinstate the status message after dismissing the alert or refreshing the page.
 
