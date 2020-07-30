@@ -38,7 +38,29 @@ You can customise the page template, for example, by adding a service name and n
 
 ## Changing template content
 
-If you’re using Nunjucks, you can change the template’s content using [options](https://frontend.design-system.service.gov.uk/use-nunjucks/#changing-the-html-thats-generated).
+If you’re using Nunjucks, you can change the template’s content using options.
+
+How you set an option depends on whether it's a 'variable' option or a 'block' option.
+
+To set a 'variable' option, use `set` to pass in a single value or string. For example, to add a class to the `<body>` element using the `bodyClasses` option:
+
+```javascript
+{% raw %}
+{% set bodyClasses = "EXAMPLE-CLASS" %}
+{% endraw %}
+```
+
+To set a 'block' option, use `block` to pass in a multiline value or HTML markup. For example, to add a block of HTML before the closing </body> element in the page template using the `bodyEnd` option:
+
+```javascript
+{% raw %}
+{% block bodyEnd %}
+  <div>
+     <p>Example text</p>
+  </div>
+{% endblock %}
+{% endraw %}
+```
 
 To change the components that are included in the page template by default, set their equivalent blocks. For example:
 
@@ -51,6 +73,8 @@ To change the components that are included in the page template by default, set 
 {% endblock %}
 {% endraw %}
 ```
+
+### Options
 
 <table class="govuk-table app-table--constrained">
   <caption class="govuk-table__caption govuk-visually-hidden">Options that you can use with the page template</caption>
